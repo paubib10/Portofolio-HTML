@@ -314,28 +314,144 @@
       if (themeBtn && themeText) {
         themeBtn.addEventListener("click", () => {
           document.body.classList.toggle("light");
-          themeText.textContent = document.body.classList.contains("light")
-            ? "Claro"
-            : "Oscuro";
+          const isLight = document.body.classList.contains("light");
+          if (currentLang === "ESP") {
+            themeText.textContent = isLight ? "Claro" : "Oscuro";
+          } else {
+            themeText.textContent = isLight ? "Light" : "Dark";
+          }
         });
       }
 
-      // Idioma ESP/ENG
+      // Sistema de idiomas completo ESP/ENG
       const langBtn = document.getElementById("langBtn");
       const langText = document.getElementById("langText");
-      let lang = "ESP";
+      let currentLang = "ESP"; // Idioma por defecto
       
+      // Diccionario de traducciones
+      const translations = {
+        ESP: {
+          // Topbar
+          langText: "ESP",
+          themeText: "Oscuro",
+          menuText: "Menú",
+          
+          // Menu
+          menuHome: "Inicio",
+          menuProjects: "Proyectos", 
+          menuAbout: "Sobre mí",
+          menuContact: "Contacto",
+          
+          // Splash
+          loadingText: "INICIALIZANDO SISTEMA...",
+          
+          // Main content
+          professionSoftware: "COMPUTER",
+          professionEngineer: "ENGINEER",
+          codeBuilding: "building",
+          codeThe: " the",
+          codeFuture: "future",
+          ctaLabel: "VER PROYECTOS",
+          
+          // Footer
+          footerText: "© 2025 Pau Bibiloni | Portfolio | Powered by Elegance"
+        },
+        ENG: {
+          // Topbar
+          langText: "ENG",
+          themeText: "Dark",
+          menuText: "Menu",
+          
+          // Menu
+          menuHome: "Home",
+          menuProjects: "Projects",
+          menuAbout: "About Me", 
+          menuContact: "Contact",
+          
+          // Splash
+          loadingText: "INITIALIZING SYSTEM...",
+          
+          // Main content
+          professionSoftware: "SOFTWARE",
+          professionEngineer: "ENGINEER", 
+          codeBuilding: "building",
+          codeThe: " the",
+          codeFuture: "future",
+          ctaLabel: "VIEW PROJECTS",
+          
+          // Footer
+          footerText: "© 2025 Pau Bibiloni | Portfolio | Powered by Elegance"
+        }
+      };
+      
+      // Función para cambiar idioma
+      function changeLanguage(lang) {
+        const t = translations[lang];
+        
+        // Actualizar topbar
+        document.getElementById("langText").textContent = t.langText;
+        const themeText = document.getElementById("themeText");
+        if (!document.body.classList.contains("light")) {
+          themeText.textContent = lang === "ESP" ? "Oscuro" : "Dark";
+        } else {
+          themeText.textContent = lang === "ESP" ? "Claro" : "Light";
+        }
+        document.querySelector(".menu-btn span").textContent = t.menuText;
+        
+        // Actualizar menú
+        const menuItems = document.querySelectorAll(".menu-items nav ol li a");
+        if (menuItems.length >= 4) {
+          menuItems[0].textContent = t.menuHome;
+          menuItems[1].textContent = t.menuProjects;
+          menuItems[2].textContent = t.menuAbout;
+          menuItems[3].textContent = t.menuContact;
+        }
+        
+        // Actualizar splash
+        const loadingText = document.querySelector(".loading-text");
+        if (loadingText) loadingText.textContent = t.loadingText;
+        
+        // Actualizar contenido principal
+        const professionWords = document.querySelectorAll(".profession-word");
+        if (professionWords.length >= 2) {
+          professionWords[0].textContent = t.professionSoftware;
+          professionWords[1].textContent = t.professionEngineer;
+        }
+        
+        // Actualizar código
+        const codeTag = document.querySelector(".code-tag");
+        const codeAttribute = document.querySelector(".code-attribute");
+        const codeValue = document.querySelector(".code-value");
+        if (codeTag) codeTag.textContent = t.codeBuilding;
+        if (codeAttribute) codeAttribute.textContent = t.codeThe;
+        if (codeValue) codeValue.textContent = `="${t.codeFuture}"`;
+        
+        // Actualizar CTA
+        const ctaLabel = document.querySelector(".cta-label");
+        if (ctaLabel) ctaLabel.textContent = t.ctaLabel;
+        
+        // Actualizar footer
+        const footer = document.querySelector(".footer");
+        if (footer) footer.textContent = t.footerText;
+      }
+      
+      // Inicializar idioma por defecto
+      changeLanguage(currentLang);
+      
+      // Event listener para cambio de idioma
       if (langBtn && langText) {
         langBtn.addEventListener("click", () => {
-          lang = lang === "ESP" ? "ENG" : "ESP";
-          langText.textContent = lang;
-          
-          // Cambiar texto del botón CTA
-          const ctaLabel = document.querySelector(".cta-label");
-          if (ctaLabel) {
-            ctaLabel.textContent = lang === "ESP" ? "VER PROYECTOS" : "VIEW PROJECTS";
-          }
+          currentLang = currentLang === "ESP" ? "ENG" : "ESP";
+          changeLanguage(currentLang);
+          localStorage.setItem('preferredLanguage', currentLang);
         });
+      }
+      
+      // Cargar idioma guardado
+      const savedLang = localStorage.getItem('preferredLanguage');
+      if (savedLang && (savedLang === "ESP" || savedLang === "ENG")) {
+        currentLang = savedLang;
+        changeLanguage(currentLang);
       }
     </script>
   </body>

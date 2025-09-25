@@ -432,6 +432,198 @@
     </div>
 
     <script>
+      // Sistema de idiomas completo ESP/ENG
+      let currentLang = "ESP";
+      
+      // Diccionario de traducciones para Projects
+      const translations = {
+        ESP: {
+          // Topbar
+          langText: "ESP",
+          themeText: "Oscuro",
+          menuText: "Menú",
+          
+          // Menu
+          menuHome: "Inicio",
+          menuProjects: "Proyectos", 
+          menuAbout: "Sobre mí",
+          menuContact: "Contacto",
+          
+          // Page content
+          pageTitle: ["P","R","O","J","E","C","T","S"],
+          pageSubtitle: {
+            tag: "showcase",
+            attribute: " of",
+            value: "innovation"
+          },
+          
+          // Projects
+          projects: {
+            zenword: {
+              title: "ZenWord",
+              description: "ZenWord es un juego de palabras que nos ayuda a entrenar nuestro cerebro. Un desafío mental interactivo desarrollado en Java con interfaz gráfica intuitiva.",
+              codeBtn: "Ver Código",
+              demoBtn: "Demo"
+            },
+            filemanager: {
+              title: "FileManager", 
+              description: "Sistema de ficheros basado en Ext2 implementado en C. Una implementación completa de operaciones de archivos y directorios con bajo nivel.",
+              codeBtn: "Ver Código",
+              demoBtn: "Documentación"
+            },
+            spaceshooter: {
+              title: "Space Shooter",
+              description: "Adaptación en ensamblador Easy68K del famoso juego Space Shooter. Programación de bajo nivel con gráficos y mecánicas de juego clásico.",
+              codeBtn: "Ver Código", 
+              demoBtn: "Gameplay"
+            },
+            puzzle: {
+              title: "PuzzleJava",
+              description: "Un juego de rompecabezas en Java donde puedes personalizar con tus imágenes preferidas y dividir el puzzle a tu gusto. ¡Desafía tu mente y disfruta!",
+              codeBtn: "Ver Código",
+              demoBtn: "Jugar"
+            },
+            piano: {
+              title: "PianoMelodiasJava",
+              description: "Piano virtual interactivo desarrollado en Java. Con la capacidad de tocar notas, crear melodías personalizadas, reproducirlas y desarrollar tu talento musical.",
+              codeBtn: "Ver Código",
+              demoBtn: "Tocar Piano"
+            },
+            maze: {
+              title: "MAZE-GAME",
+              description: "Generar laberintos aleatoriamente que se han de explorar interactivamente. Desarrollado en Common Lisp con algoritmos de generación procedural.",
+              codeBtn: "Ver Código",
+              demoBtn: "Explorar"
+            }
+          },
+          
+          ctaLabel: "VOLVER AL INICIO",
+          footerText: "© 2025 Pau Bibiloni | Portfolio | Powered by Elegance"
+        },
+        ENG: {
+          // Topbar
+          langText: "ENG",
+          themeText: "Dark",
+          menuText: "Menu",
+          
+          // Menu
+          menuHome: "Home",
+          menuProjects: "Projects",
+          menuAbout: "About Me", 
+          menuContact: "Contact",
+          
+          // Page content
+          pageTitle: ["P","R","O","J","E","C","T","S"],
+          pageSubtitle: {
+            tag: "showcase",
+            attribute: " of",
+            value: "innovation"
+          },
+          
+          // Projects
+          projects: {
+            zenword: {
+              title: "ZenWord",
+              description: "ZenWord is a word game that helps us train our brain. An interactive mental challenge developed in Java with intuitive graphical interface.",
+              codeBtn: "View Code",
+              demoBtn: "Demo"
+            },
+            filemanager: {
+              title: "FileManager",
+              description: "Ext2-based file system implemented in C. A complete implementation of file and directory operations with low-level programming.",
+              codeBtn: "View Code", 
+              demoBtn: "Documentation"
+            },
+            spaceshooter: {
+              title: "Space Shooter",
+              description: "Easy68K assembly adaptation of the famous Space Shooter game. Low-level programming with classic game graphics and mechanics.",
+              codeBtn: "View Code",
+              demoBtn: "Gameplay"
+            },
+            puzzle: {
+              title: "PuzzleJava", 
+              description: "A puzzle game in Java where you can customize with your favorite images and divide the puzzle to your liking. Challenge your mind and enjoy!",
+              codeBtn: "View Code",
+              demoBtn: "Play"
+            },
+            piano: {
+              title: "PianoMelodiasJava",
+              description: "Interactive virtual piano developed in Java. With the ability to play notes, create custom melodies, play them back and develop your musical talent.",
+              codeBtn: "View Code",
+              demoBtn: "Play Piano"
+            },
+            maze: {
+              title: "MAZE-GAME",
+              description: "Generate mazes randomly that must be explored interactively. Developed in Common Lisp with procedural generation algorithms.",
+              codeBtn: "View Code",
+              demoBtn: "Explore"
+            }
+          },
+          
+          ctaLabel: "BACK TO HOME",
+          footerText: "© 2025 Pau Bibiloni | Portfolio | Powered by Elegance"
+        }
+      };
+      
+      // Función para cambiar idioma
+      function changeLanguage(lang) {
+        const t = translations[lang];
+        
+        // Actualizar topbar
+        document.getElementById("langText").textContent = t.langText;
+        const themeText = document.getElementById("themeText");
+        if (!document.body.classList.contains("light")) {
+          themeText.textContent = lang === "ESP" ? "Oscuro" : "Dark";
+        } else {
+          themeText.textContent = lang === "ESP" ? "Claro" : "Light";
+        }
+        document.querySelector(".menu-btn span").textContent = t.menuText;
+        
+        // Actualizar menú
+        const menuItems = document.querySelectorAll(".menu-items nav ol li a");
+        if (menuItems.length >= 4) {
+          menuItems[0].textContent = t.menuHome;
+          menuItems[1].textContent = t.menuProjects;
+          menuItems[2].textContent = t.menuAbout;
+          menuItems[3].textContent = t.menuContact;
+        }
+        
+        // Actualizar subtítulo de página
+        const codeTag = document.querySelector(".code-tag");
+        const codeAttribute = document.querySelector(".code-attribute");
+        const codeValue = document.querySelector(".code-value");
+        if (codeTag) codeTag.textContent = t.pageSubtitle.tag;
+        if (codeAttribute) codeAttribute.textContent = t.pageSubtitle.attribute;
+        if (codeValue) codeValue.textContent = `="${t.pageSubtitle.value}"`;
+        
+        // Actualizar proyectos
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectKeys = Object.keys(t.projects);
+        
+        projectCards.forEach((card, index) => {
+          if (projectKeys[index]) {
+            const project = t.projects[projectKeys[index]];
+            const title = card.querySelector('.project-title');
+            const description = card.querySelector('.project-description');
+            const primaryBtn = card.querySelector('.project-btn.primary span');
+            const secondaryBtn = card.querySelector('.project-btn.secondary span');
+            
+            if (title) title.textContent = project.title;
+            if (description) description.textContent = project.description;
+            if (primaryBtn) primaryBtn.textContent = project.codeBtn;
+            if (secondaryBtn) secondaryBtn.textContent = project.demoBtn;
+          }
+        });
+        
+        // Actualizar CTA
+        const ctaLabel = document.querySelector(".cta-label");
+        if (ctaLabel) ctaLabel.textContent = t.ctaLabel;
+        
+        // Actualizar footer
+        const footer = document.querySelector(".footer");
+        if (footer) footer.textContent = t.footerText;
+      }
+
       // Menú hamburguesa
       const menuBtn = document.getElementById("menuBtn");
       const menu = document.getElementById("menu");
@@ -450,23 +642,32 @@
       if (themeBtn && themeText) {
         themeBtn.addEventListener("click", () => {
           document.body.classList.toggle("light");
-          themeText.textContent = document.body.classList.contains("light")
-            ? "Claro"
-            : "Oscuro";
+          const isLight = document.body.classList.contains("light");
+          if (currentLang === "ESP") {
+            themeText.textContent = isLight ? "Claro" : "Oscuro";
+          } else {
+            themeText.textContent = isLight ? "Light" : "Dark";
+          }
         });
       }
 
-      // Idioma ESP/ENG
+      // Event listener para cambio de idioma
       const langBtn = document.getElementById("langBtn");
       const langText = document.getElementById("langText");
-      let lang = "ESP";
-      
       if (langBtn && langText) {
         langBtn.addEventListener("click", () => {
-          lang = lang === "ESP" ? "ENG" : "ESP";
-          langText.textContent = lang;
+          currentLang = currentLang === "ESP" ? "ENG" : "ESP";
+          changeLanguage(currentLang);
+          localStorage.setItem('preferredLanguage', currentLang);
         });
       }
+
+      // Cargar idioma guardado y inicializar
+      const savedLang = localStorage.getItem('preferredLanguage');
+      if (savedLang && (savedLang === "ESP" || savedLang === "ENG")) {
+        currentLang = savedLang;
+      }
+      changeLanguage(currentLang);
 
       // Animación de entrada de las tarjetas de proyecto
       const projectCards = document.querySelectorAll('.project-card');

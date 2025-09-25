@@ -323,6 +323,182 @@
     </div>
 
     <script>
+      // Sistema de idiomas completo ESP/ENG
+      let currentLang = "ESP";
+      
+      // Diccionario de traducciones para Contact
+      const translations = {
+        ESP: {
+          // Topbar
+          langText: "ESP",
+          themeText: "Oscuro",
+          menuText: "Menú",
+          
+          // Menu
+          menuHome: "Inicio",
+          menuProjects: "Proyectos", 
+          menuAbout: "Sobre mí",
+          menuContact: "Contacto",
+          
+          // Page content
+          pageSubtitle: {
+            tag: "connect",
+            attribute: " with",
+            value: "me"
+          },
+          
+          // Contact intro
+          contactMessage: "¿Tienes algún proyecto en mente o simplemente quieres conectar?<br>¡Me encantaría escuchar de ti!",
+          
+          // Contact cards
+          emailTitle: "Email Profesional",
+          emailDetail: "psbibiloni@gmail.com",
+          emailLink: "Enviar Email",
+          
+          instaTitle: "Instagram",
+          instaDetail: "@paubib_306",
+          instaLink: "Visitar Perfil",
+          
+          githubTitle: "GitHub",
+          githubDetail: "paubib10",
+          githubLink: "Ver Repositorios",
+          
+          // Contact form
+          formTitle: "Envíame un mensaje directo",
+          formDescription: "Completa el formulario y me pondré en contacto contigo lo antes posible.",
+          nameLabel: "Nombre",
+          emailLabel: "Email",
+          subjectLabel: "Asunto",
+          messageLabel: "Mensaje",
+          sendBtn: "ENVIAR MENSAJE",
+          
+          ctaLabel: "VOLVER AL INICIO",
+          footerText: "© 2025 Pau Bibiloni | Portfolio | Powered by Elegance"
+        },
+        ENG: {
+          // Topbar
+          langText: "ENG",
+          themeText: "Dark",
+          menuText: "Menu",
+          
+          // Menu
+          menuHome: "Home",
+          menuProjects: "Projects",
+          menuAbout: "About Me", 
+          menuContact: "Contact",
+          
+          // Page content
+          pageSubtitle: {
+            tag: "connect",
+            attribute: " with",
+            value: "me"
+          },
+          
+          // Contact intro
+          contactMessage: "Got a project in mind or just want to connect?<br>I'd love to hear from you!",
+          
+          // Contact cards
+          emailTitle: "Professional Email",
+          emailDetail: "psbibiloni@gmail.com",
+          emailLink: "Send Email",
+          
+          instaTitle: "Instagram",
+          instaDetail: "@paubib_306",
+          instaLink: "Visit Profile",
+          
+          githubTitle: "GitHub",
+          githubDetail: "paubib10",
+          githubLink: "View Repositories",
+          
+          // Contact form
+          formTitle: "Send me a direct message",
+          formDescription: "Fill out the form and I'll get back to you as soon as possible.",
+          nameLabel: "Name",
+          emailLabel: "Email",
+          subjectLabel: "Subject",
+          messageLabel: "Message",
+          sendBtn: "SEND MESSAGE",
+          
+          ctaLabel: "BACK TO HOME",
+          footerText: "© 2025 Pau Bibiloni | Portfolio | Powered by Elegance"
+        }
+      };
+      
+      // Función para cambiar idioma
+      function changeLanguage(lang) {
+        const t = translations[lang];
+        
+        // Actualizar topbar
+        document.getElementById("langText").textContent = t.langText;
+        const themeText = document.getElementById("themeText");
+        if (!document.body.classList.contains("light")) {
+          themeText.textContent = lang === "ESP" ? "Oscuro" : "Dark";
+        } else {
+          themeText.textContent = lang === "ESP" ? "Claro" : "Light";
+        }
+        document.querySelector(".menu-btn span").textContent = t.menuText;
+        
+        // Actualizar menú
+        const menuItems = document.querySelectorAll(".menu-items nav ol li a");
+        if (menuItems.length >= 4) {
+          menuItems[0].textContent = t.menuHome;
+          menuItems[1].textContent = t.menuProjects;
+          menuItems[2].textContent = t.menuAbout;
+          menuItems[3].textContent = t.menuContact;
+        }
+        
+        // Actualizar subtítulo de página
+        const codeTag = document.querySelector(".code-tag");
+        const codeAttribute = document.querySelector(".code-attribute");
+        const codeValue = document.querySelector(".code-value");
+        if (codeTag) codeTag.textContent = t.pageSubtitle.tag;
+        if (codeAttribute) codeAttribute.textContent = t.pageSubtitle.attribute;
+        if (codeValue) codeValue.textContent = `="${t.pageSubtitle.value}"`;
+        
+        // Actualizar mensaje de contacto
+        const contactMessage = document.querySelector(".contact-message");
+        if (contactMessage) contactMessage.innerHTML = t.contactMessage;
+        
+        // Actualizar tarjetas de contacto
+        const contactTitles = document.querySelectorAll(".contact-title");
+        const contactDetails = document.querySelectorAll(".contact-detail");
+        const contactLinks = document.querySelectorAll(".contact-link span");
+        
+        if (contactTitles[0]) contactTitles[0].textContent = t.emailTitle;
+        if (contactTitles[1]) contactTitles[1].textContent = t.instaTitle;
+        if (contactTitles[2]) contactTitles[2].textContent = t.githubTitle;
+        
+        if (contactLinks[0]) contactLinks[0].textContent = t.emailLink;
+        if (contactLinks[1]) contactLinks[1].textContent = t.instaLink;
+        if (contactLinks[2]) contactLinks[2].textContent = t.githubLink;
+        
+        // Actualizar formulario
+        const formTitle = document.querySelector(".form-title");
+        const formDescription = document.querySelector(".form-description");
+        if (formTitle) formTitle.textContent = t.formTitle;
+        if (formDescription) formDescription.textContent = t.formDescription;
+        
+        const nameLabel = document.querySelector('label[for="name"]');
+        const emailLabel = document.querySelector('label[for="email"]');
+        const subjectLabel = document.querySelector('label[for="subject"]');
+        const messageLabel = document.querySelector('label[for="message"]');
+        if (nameLabel) nameLabel.textContent = t.nameLabel;
+        if (emailLabel) emailLabel.textContent = t.emailLabel;
+        if (subjectLabel) subjectLabel.textContent = t.subjectLabel;
+        if (messageLabel) messageLabel.textContent = t.messageLabel;
+        
+        const submitLabel = document.querySelector(".submit-label");
+        if (submitLabel) submitLabel.textContent = t.sendBtn;
+        
+        // Actualizar CTA
+        const ctaLabel = document.querySelector(".cta-label");
+        if (ctaLabel) ctaLabel.textContent = t.ctaLabel;
+        
+        // Actualizar footer
+        const footer = document.querySelector(".footer");
+        if (footer) footer.textContent = t.footerText;
+      }
+
       // Menú hamburguesa
       const menuBtn = document.getElementById("menuBtn");
       const menu = document.getElementById("menu");
@@ -341,21 +517,23 @@
       if (themeBtn && themeText) {
         themeBtn.addEventListener("click", () => {
           document.body.classList.toggle("light");
-          themeText.textContent = document.body.classList.contains("light")
-            ? "Claro"
-            : "Oscuro";
+          const isLight = document.body.classList.contains("light");
+          if (currentLang === "ESP") {
+            themeText.textContent = isLight ? "Claro" : "Oscuro";
+          } else {
+            themeText.textContent = isLight ? "Light" : "Dark";
+          }
         });
       }
 
-      // Idioma ESP/ENG
+      // Event listener para cambio de idioma
       const langBtn = document.getElementById("langBtn");
       const langText = document.getElementById("langText");
-      let lang = "ESP";
-      
       if (langBtn && langText) {
         langBtn.addEventListener("click", () => {
-          lang = lang === "ESP" ? "ENG" : "ESP";
-          langText.textContent = lang;
+          currentLang = currentLang === "ESP" ? "ENG" : "ESP";
+          changeLanguage(currentLang);
+          localStorage.setItem('preferredLanguage', currentLang);
         });
       }
 
@@ -370,7 +548,7 @@
           const submitLabel = submitBtn.querySelector('.submit-label');
           const originalText = submitLabel.textContent;
           
-          submitLabel.textContent = '¡MENSAJE ENVIADO!';
+          submitLabel.textContent = currentLang === "ESP" ? '¡MENSAJE ENVIADO!' : 'MESSAGE SENT!';
           submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
           
           setTimeout(() => {
@@ -380,6 +558,13 @@
           }, 3000);
         });
       }
+
+      // Cargar idioma guardado y inicializar
+      const savedLang = localStorage.getItem('preferredLanguage');
+      if (savedLang && (savedLang === "ESP" || savedLang === "ENG")) {
+        currentLang = savedLang;
+      }
+      changeLanguage(currentLang);
 
       // Animación de entrada de las tarjetas
       const contactCards = document.querySelectorAll('.contact-card');

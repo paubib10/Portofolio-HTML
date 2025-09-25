@@ -362,6 +362,228 @@
     </div>
 
     <script>
+      // Sistema de idiomas completo ESP/ENG
+      let currentLang = "ESP";
+      
+      // Diccionario de traducciones para About
+      const translations = {
+        ESP: {
+          // Topbar
+          langText: "ESP",
+          themeText: "Oscuro",
+          menuText: "Menú",
+          
+          // Menu
+          menuHome: "Inicio",
+          menuProjects: "Proyectos", 
+          menuAbout: "Sobre mí",
+          menuContact: "Contacto",
+          
+          // Page content
+          pageTitle: ["A","B","O","U","T"," ","M","E"],
+          pageSubtitle: {
+            tag: "personal",
+            attribute: " journey",
+            value: "endless_learning"
+          },
+          
+          // About content
+          introName: "Pau Toni Bibiloni Martínez",
+          introDescription1: "Estudiante apasionado de <strong>Ingeniería Informática</strong> en la UIB, con un enfoque especial en el desarrollo de software innovador y el diseño digital creativo.",
+          introDescription2: "Me fascina el mundo de la tecnología y su potencial para transformar ideas en soluciones reales. Además, soy un entusiasta del fitness y creo firmemente en el equilibrio entre mente y cuerpo.",
+          
+          // Cards
+          skillsTitle: "Habilidades Técnicas",
+          educationTitle: "Formación Académica",
+          interestsTitle: "Pasiones & Intereses",
+          
+          // Education timeline
+          education1Title: "Ingeniería Informática",
+          education1Desc: "Universidad de las Islas Baleares (UIB)",
+          education1Year: "4º Curso - Actualidad",
+          education2Title: "Bachillerato Tecnológico", 
+          education2Desc: "Especialización en Ciencias y Tecnología",
+          education2Year: "Completado",
+          education3Title: "Educación Secundaria",
+          education3Desc: "ESO con excelencia académica", 
+          education3Year: "Completado",
+          
+          // Interests
+          interest1Title: "Fitness & Gym",
+          interest1Desc: "Entrenamiento regular y vida saludable",
+          interest2Title: "Tecnología",
+          interest2Desc: "Últimas tendencias en desarrollo software",
+          interest3Title: "Música",
+          interest3Desc: "Exploración de géneros y nuevos artistas",
+          interest4Title: "Creatividad",
+          interest4Desc: "Diseño digital y expresión artística",
+          
+          ctaLabel: "VOLVER AL INICIO",
+          footerText: "© 2025 Pau Bibiloni | Portfolio | Powered by Elegance"
+        },
+        ENG: {
+          // Topbar
+          langText: "ENG",
+          themeText: "Dark",
+          menuText: "Menu",
+          
+          // Menu
+          menuHome: "Home",
+          menuProjects: "Projects",
+          menuAbout: "About Me", 
+          menuContact: "Contact",
+          
+          // Page content
+          pageTitle: ["A","B","O","U","T"," ","M","E"],
+          pageSubtitle: {
+            tag: "personal",
+            attribute: " journey",
+            value: "endless_learning"
+          },
+          
+          // About content
+          introName: "Pau Toni Bibiloni Martínez",
+          introDescription1: "Passionate <strong>Computer Engineering</strong> student at UIB, with a special focus on innovative software development and creative digital design.",
+          introDescription2: "I'm fascinated by the world of technology and its potential to transform ideas into real solutions. I'm also a fitness enthusiast and firmly believe in the balance between mind and body.",
+          
+          // Cards
+          skillsTitle: "Technical Skills",
+          educationTitle: "Academic Background",
+          interestsTitle: "Passions & Interests",
+          
+          // Education timeline
+          education1Title: "Computer Engineering",
+          education1Desc: "University of the Balearic Islands (UIB)",
+          education1Year: "4th Year - Current",
+          education2Title: "Technology High School",
+          education2Desc: "Specialization in Science and Technology", 
+          education2Year: "Completed",
+          education3Title: "Secondary Education",
+          education3Desc: "ESO with academic excellence",
+          education3Year: "Completed",
+          
+          // Interests
+          interest1Title: "Fitness & Gym",
+          interest1Desc: "Regular training and healthy lifestyle",
+          interest2Title: "Technology", 
+          interest2Desc: "Latest trends in software development",
+          interest3Title: "Music",
+          interest3Desc: "Exploring genres and new artists",
+          interest4Title: "Creativity",
+          interest4Desc: "Digital design and artistic expression",
+          
+          ctaLabel: "BACK TO HOME",
+          footerText: "© 2025 Pau Bibiloni | Portfolio | Powered by Elegance"
+        }
+      };
+      
+      // Función para cambiar idioma
+      function changeLanguage(lang) {
+        const t = translations[lang];
+        
+        // Actualizar topbar
+        document.getElementById("langText").textContent = t.langText;
+        const themeText = document.getElementById("themeText");
+        if (!document.body.classList.contains("light")) {
+          themeText.textContent = lang === "ESP" ? "Oscuro" : "Dark";
+        } else {
+          themeText.textContent = lang === "ESP" ? "Claro" : "Light";
+        }
+        document.querySelector(".menu-btn span").textContent = t.menuText;
+        
+        // Actualizar menú
+        const menuItems = document.querySelectorAll(".menu-items nav ol li a");
+        if (menuItems.length >= 4) {
+          menuItems[0].textContent = t.menuHome;
+          menuItems[1].textContent = t.menuProjects;
+          menuItems[2].textContent = t.menuAbout;
+          menuItems[3].textContent = t.menuContact;
+        }
+        
+        // Actualizar subtítulo de página
+        const codeTag = document.querySelector(".code-tag");
+        const codeAttribute = document.querySelector(".code-attribute");
+        const codeValue = document.querySelector(".code-value");
+        if (codeTag) codeTag.textContent = t.pageSubtitle.tag;
+        if (codeAttribute) codeAttribute.textContent = t.pageSubtitle.attribute;
+        if (codeValue) codeValue.textContent = `="${t.pageSubtitle.value}"`;
+        
+        // Actualizar contenido sobre mí
+        const introName = document.querySelector(".intro-name");
+        const introDesc = document.querySelectorAll(".intro-description p");
+        if (introName) introName.textContent = t.introName;
+        if (introDesc[0]) introDesc[0].innerHTML = t.introDescription1;
+        if (introDesc[1]) introDesc[1].innerHTML = t.introDescription2;
+        
+        // Actualizar títulos de tarjetas
+        const cardTitles = document.querySelectorAll(".card-title");
+        if (cardTitles[0]) cardTitles[0].textContent = t.skillsTitle;
+        if (cardTitles[1]) cardTitles[1].textContent = t.educationTitle;
+        if (cardTitles[2]) cardTitles[2].textContent = t.interestsTitle;
+        
+        // Actualizar timeline de educación
+        const timelineItems = document.querySelectorAll(".timeline-content");
+        if (timelineItems[0]) {
+          const h4 = timelineItems[0].querySelector("h4");
+          const p = timelineItems[0].querySelector("p");
+          const span = timelineItems[0].querySelector(".timeline-year");
+          if (h4) h4.textContent = t.education1Title;
+          if (p) p.textContent = t.education1Desc;
+          if (span) span.textContent = t.education1Year;
+        }
+        if (timelineItems[1]) {
+          const h4 = timelineItems[1].querySelector("h4");
+          const p = timelineItems[1].querySelector("p");
+          const span = timelineItems[1].querySelector(".timeline-year");
+          if (h4) h4.textContent = t.education2Title;
+          if (p) p.textContent = t.education2Desc;
+          if (span) span.textContent = t.education2Year;
+        }
+        if (timelineItems[2]) {
+          const h4 = timelineItems[2].querySelector("h4");
+          const p = timelineItems[2].querySelector("p");
+          const span = timelineItems[2].querySelector(".timeline-year");
+          if (h4) h4.textContent = t.education3Title;
+          if (p) p.textContent = t.education3Desc;
+          if (span) span.textContent = t.education3Year;
+        }
+        
+        // Actualizar intereses
+        const interestItems = document.querySelectorAll(".interest-text");
+        if (interestItems[0]) {
+          const h4 = interestItems[0].querySelector("h4");
+          const p = interestItems[0].querySelector("p");
+          if (h4) h4.textContent = t.interest1Title;
+          if (p) p.textContent = t.interest1Desc;
+        }
+        if (interestItems[1]) {
+          const h4 = interestItems[1].querySelector("h4");
+          const p = interestItems[1].querySelector("p");
+          if (h4) h4.textContent = t.interest2Title;
+          if (p) p.textContent = t.interest2Desc;
+        }
+        if (interestItems[2]) {
+          const h4 = interestItems[2].querySelector("h4");
+          const p = interestItems[2].querySelector("p");
+          if (h4) h4.textContent = t.interest3Title;
+          if (p) p.textContent = t.interest3Desc;
+        }
+        if (interestItems[3]) {
+          const h4 = interestItems[3].querySelector("h4");
+          const p = interestItems[3].querySelector("p");
+          if (h4) h4.textContent = t.interest4Title;
+          if (p) p.textContent = t.interest4Desc;
+        }
+        
+        // Actualizar CTA
+        const ctaLabel = document.querySelector(".cta-label");
+        if (ctaLabel) ctaLabel.textContent = t.ctaLabel;
+        
+        // Actualizar footer
+        const footer = document.querySelector(".footer");
+        if (footer) footer.textContent = t.footerText;
+      }
+
       // Menú hamburguesa
       const menuBtn = document.getElementById("menuBtn");
       const menu = document.getElementById("menu");
@@ -380,23 +602,32 @@
       if (themeBtn && themeText) {
         themeBtn.addEventListener("click", () => {
           document.body.classList.toggle("light");
-          themeText.textContent = document.body.classList.contains("light")
-            ? "Claro"
-            : "Oscuro";
+          const isLight = document.body.classList.contains("light");
+          if (currentLang === "ESP") {
+            themeText.textContent = isLight ? "Claro" : "Oscuro";
+          } else {
+            themeText.textContent = isLight ? "Light" : "Dark";
+          }
         });
       }
 
-      // Idioma ESP/ENG
+      // Event listener para cambio de idioma
       const langBtn = document.getElementById("langBtn");
       const langText = document.getElementById("langText");
-      let lang = "ESP";
-      
       if (langBtn && langText) {
         langBtn.addEventListener("click", () => {
-          lang = lang === "ESP" ? "ENG" : "ESP";
-          langText.textContent = lang;
+          currentLang = currentLang === "ESP" ? "ENG" : "ESP";
+          changeLanguage(currentLang);
+          localStorage.setItem('preferredLanguage', currentLang);
         });
       }
+
+      // Cargar idioma guardado y inicializar
+      const savedLang = localStorage.getItem('preferredLanguage');
+      if (savedLang && (savedLang === "ESP" || savedLang === "ENG")) {
+        currentLang = savedLang;
+      }
+      changeLanguage(currentLang);
 
       // Animación de entrada de las tarjetas
       const infoCards = document.querySelectorAll('.info-card');
