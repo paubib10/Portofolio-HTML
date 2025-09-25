@@ -9,12 +9,11 @@ portfolio-html
 ├── src
 │   ├── index.html          # Punto de entrada de la aplicación.
 │   ├── interfaces          # Contiene las diferentes interfaces del portafolio.
-│   │   ├── home.html      # Interfaz de inicio con saludo y descripción.
 │   │   ├── projects.html   # Interfaz de proyectos con lista de trabajos realizados.
 │   │   ├── about.html      # Interfaz "Sobre mí" con información personal y habilidades.
-│   │   └── contact.html     # Interfaz de contacto con información de contacto y redes sociales.
+│   │   └── contact.html    # Interfaz de contacto con información de contacto y redes sociales.
 │   └── styles              # Contiene los estilos CSS del portafolio.
-│       └── main.css       # Estilos para la apariencia de las interfaces.
+│       └── main.css        # Estilos para la apariencia de las interfaces.
 ```
 
 ## Instrucciones
