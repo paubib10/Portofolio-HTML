@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto | Pau Bibi Portfolio</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;700&family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <!-- Partículas de fondo tecnológicas -->
+    <div class="tech-particles"></div>
+    
+    <!-- Overlay de grid tecnológico -->
+    <div class="tech-grid"></div>
+    
+    <div class="topbar">
+      <button class="option-btn" id="langBtn" title="Cambiar idioma">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-2-8h4m-2-6v12"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+          />
+        </svg>
+        <span id="langText">ESP</span>
+      </button>
+      <button class="option-btn" id="themeBtn" title="Modo claro/oscuro">
+        <svg id="themeIcon" viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 15a5 5 0 010-10"
+            fill="currentColor"
+          />
+        </svg>
+        <span id="themeText">Oscuro</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+        <svg viewBox="0 0 32 32">
+          <polygon
+            points="16,4 28,10 28,22 16,28 4,22 4,10"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="16"
+            y1="4"
+            x2="16"
+            y2="28"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="4"
+            y1="10"
+            x2="28"
+            y2="22"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="4"
+            y1="22"
+            x2="28"
+            y2="10"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+        </svg>
+        <span>Menú</span>
+      </button>
+    </div>
+    
+    <div class="menu" id="menu">
+      <div class="menu-content">
+        <div class="menu-items">
+          <nav>
+            <ol>
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="projects.html">Proyectos</a></li>
+              <li><a href="about.html">Sobre mí</a></li>
+              <li><a href="contact.html">Contacto</a></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="menu-socials">
+          <a href="https://instagram.com/paubib_306" target="_blank"
+            >↗ Instagram </a
+          >
+          <a href="https://github.com/paubib10" target="_blank">↗ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="contact-page">
+        <!-- Contenedor principal perfectamente centrado -->
+        <div class="page-container">
+          
+          <!-- Header de la página -->
+          <div class="page-header">
+            <div class="page-title-section">
+              <h1 class="page-title">
+                <span class="title-char" data-char="C">C</span>
+                <span class="title-char" data-char="O">O</span>
+                <span class="title-char" data-char="N">N</span>
+                <span class="title-char" data-char="T">T</span>
+                <span class="title-char" data-char="A">A</span>
+                <span class="title-char" data-char="C">C</span>
+                <span class="title-char" data-char="T">T</span>
+              </h1>
+              <div class="page-subtitle">
+                <span class="code-bracket">&lt;</span>
+                <span class="code-tag">connect</span>
+                <span class="code-attribute"> with</span>
+                <span class="code-value">="me"</span>
+                <span class="code-bracket">/&gt;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contenido de contacto -->
+          <div class="contact-content">
+            
+            <!-- Mensaje principal -->
+            <div class="contact-intro">
+              <p class="contact-message">
+                ¿Tienes algún proyecto en mente o simplemente quieres conectar? 
+                <br>¡Me encantaría escuchar de ti!
+              </p>
+            </div>
+
+            <!-- Grid de métodos de contacto -->
+            <div class="contact-methods">
+              
+              <!-- Email -->
+              <div class="contact-card email-card">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 100 100">
+                    <defs>
+                      <linearGradient id="emailGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea"/>
+                        <stop offset="100%" style="stop-color:#764ba2"/>
+                      </linearGradient>
+                    </defs>
+                    <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" 
+                             fill="none" 
+                             stroke="url(#emailGrad)" 
+                             stroke-width="3"/>
+                    <rect x="30" y="35" width="40" height="30" 
+                          fill="none" 
+                          stroke="url(#emailGrad)" 
+                          stroke-width="2" 
+                          rx="3"/>
+                    <polyline points="30,45 50,55 70,45" 
+                              fill="none" 
+                              stroke="url(#emailGrad)" 
+                              stroke-width="2"/>
+                  </svg>
+                </div>
+                <div class="contact-info">
+                  <h3 class="contact-title">Email Profesional</h3>
+                  <p class="contact-detail">psbibiloni@gmail.com</p>
+                  <a href="mailto:psbibiloni@gmail.com" class="contact-link">
+                    <span>Enviar Email</span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Instagram -->
+              <div class="contact-card instagram-card">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 100 100">
+                    <defs>
+                      <linearGradient id="instaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#764ba2"/>
+                        <stop offset="100%" style="stop-color:#f093fb"/>
+                      </linearGradient>
+                    </defs>
+                    <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" 
+                             fill="none" 
+                             stroke="url(#instaGrad)" 
+                             stroke-width="3"/>
+                    <rect x="35" y="35" width="30" height="30" 
+                          fill="none" 
+                          stroke="url(#instaGrad)" 
+                          stroke-width="2" 
+                          rx="8"/>
+                    <circle cx="50" cy="50" r="8" 
+                            fill="none" 
+                            stroke="url(#instaGrad)" 
+                            stroke-width="2"/>
+                    <circle cx="57" cy="43" r="2" fill="url(#instaGrad)"/>
+                  </svg>
+                </div>
+                <div class="contact-info">
+                  <h3 class="contact-title">Instagram</h3>
+                  <p class="contact-detail">@paubib_306</p>
+                  <a href="https://instagram.com/paubib_306" target="_blank" class="contact-link">
+                    <span>Visitar Perfil</span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- GitHub -->
+              <div class="contact-card github-card">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 100 100">
+                    <defs>
+                      <linearGradient id="githubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#f093fb"/>
+                        <stop offset="100%" style="stop-color:#667eea"/>
+                      </linearGradient>
+                    </defs>
+                    <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" 
+                             fill="none" 
+                             stroke="url(#githubGrad)" 
+                             stroke-width="3"/>
+                    <circle cx="50" cy="42" r="12" 
+                            fill="none" 
+                            stroke="url(#githubGrad)" 
+                            stroke-width="2"/>
+                    <path d="M44,54 Q50,60 56,54" 
+                          fill="none" 
+                          stroke="url(#githubGrad)" 
+                          stroke-width="2"/>
+                    <circle cx="46" cy="38" r="2" fill="url(#githubGrad)"/>
+                    <circle cx="54" cy="38" r="2" fill="url(#githubGrad)"/>
+                  </svg>
+                </div>
+                <div class="contact-info">
+                  <h3 class="contact-title">GitHub</h3>
+                  <p class="contact-detail">paubib10</p>
+                  <a href="https://github.com/paubib10" target="_blank" class="contact-link">
+                    <span>Ver Repositorios</span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Formulario de contacto -->
+            <div class="contact-form-section">
+              <div class="form-header">
+                <h3 class="form-title">Envíame un mensaje directo</h3>
+                <p class="form-description">
+                  Completa el formulario y me pondré en contacto contigo lo antes posible.
+                </p>
+              </div>
+              
+              <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Asunto</label>
+                  <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Mensaje</label>
+                  <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="form-submit">
+                    <div class="submit-inner">
+                      <span class="submit-icon">→</span>
+                      <span class="submit-label">ENVIAR MENSAJE</span>
+                    </div>
+                    <div class="submit-glow"></div>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+          <!-- Botón de regreso -->
+          <div class="back-section">
+            <button class="modern-cta" onclick="window.location.href='../index.html'">
+              <div class="cta-inner">
+                <span class="cta-icon">←</span>
+                <span class="cta-label">VOLVER AL INICIO</span>
+              </div>
+              <div class="cta-glow"></div>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Efectos de fondo -->
+        <div class="background-effects">
+          <div class="gradient-orb orb-1"></div>
+          <div class="gradient-orb orb-2"></div>
+          <div class="gradient-orb orb-3"></div>
+          <div class="grid-pattern"></div>
+          <div class="floating-particles"></div>
+        </div>
+
+      </div>
+    </main>
+
+    <div class="footer">
+      &copy; 2025 Pau Bibiloni | Portfolio | Powered by Elegance
+    </div>
+
+    <script>
+      // Menú hamburguesa
+      const menuBtn = document.getElementById("menuBtn");
+      const menu = document.getElementById("menu");
+      if (menuBtn && menu) {
+        menuBtn.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+        menu.addEventListener("click", (e) => {
+          if (e.target === menu) menu.classList.remove("open");
+        });
+      }
+
+      // Modo claro/oscuro
+      const themeBtn = document.getElementById("themeBtn");
+      const themeText = document.getElementById("themeText");
+      if (themeBtn && themeText) {
+        themeBtn.addEventListener("click", () => {
+          document.body.classList.toggle("light");
+          themeText.textContent = document.body.classList.contains("light")
+            ? "Claro"
+            : "Oscuro";
+        });
+      }
+
+      // Idioma ESP/ENG
+      const langBtn = document.getElementById("langBtn");
+      const langText = document.getElementById("langText");
+      let lang = "ESP";
+      
+      if (langBtn && langText) {
+        langBtn.addEventListener("click", () => {
+          lang = lang === "ESP" ? "ENG" : "ESP";
+          langText.textContent = lang;
+        });
+      }
+
+      // Manejo del formulario de contacto
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Mostrar mensaje de éxito (simulado)
+          const submitBtn = this.querySelector('.form-submit');
+          const submitLabel = submitBtn.querySelector('.submit-label');
+          const originalText = submitLabel.textContent;
+          
+          submitLabel.textContent = '¡MENSAJE ENVIADO!';
+          submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+          
+          setTimeout(() => {
+            submitLabel.textContent = originalText;
+            submitBtn.style.background = '';
+            this.reset();
+          }, 3000);
+        });
+      }
+
+      // Animación de entrada de las tarjetas
+      const contactCards = document.querySelectorAll('.contact-card');
+      contactCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+        card.classList.add('fade-in-up');
+      });
+    </script>
+</body>
+</html>

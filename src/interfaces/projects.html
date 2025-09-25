@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyectos | Pau Bibi Portfolio</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;700&family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <!-- Partículas de fondo tecnológicas -->
+    <div class="tech-particles"></div>
+    
+    <!-- Overlay de grid tecnológico -->
+    <div class="tech-grid"></div>
+    
+    <div class="topbar">
+      <button class="option-btn" id="langBtn" title="Cambiar idioma">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-2-8h4m-2-6v12"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+          />
+        </svg>
+        <span id="langText">ESP</span>
+      </button>
+      <button class="option-btn" id="themeBtn" title="Modo claro/oscuro">
+        <svg id="themeIcon" viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 15a5 5 0 010-10"
+            fill="currentColor"
+          />
+        </svg>
+        <span id="themeText">Oscuro</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+        <svg viewBox="0 0 32 32">
+          <polygon
+            points="16,4 28,10 28,22 16,28 4,22 4,10"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="16"
+            y1="4"
+            x2="16"
+            y2="28"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="4"
+            y1="10"
+            x2="28"
+            y2="22"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="4"
+            y1="22"
+            x2="28"
+            y2="10"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+        </svg>
+        <span>Menú</span>
+      </button>
+    </div>
+    
+    <div class="menu" id="menu">
+      <div class="menu-content">
+        <div class="menu-items">
+          <nav>
+            <ol>
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="projects.html">Proyectos</a></li>
+              <li><a href="about.html">Sobre mí</a></li>
+              <li><a href="contact.html">Contacto</a></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="menu-socials">
+          <a href="https://instagram.com/paubib_306" target="_blank"
+            >↗ Instagram </a
+          >
+          <a href="https://github.com/paubib10" target="_blank">↗ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="projects-page">
+        <!-- Contenedor principal perfectamente centrado -->
+        <div class="page-container">
+          
+          <!-- Header de la página -->
+          <div class="page-header">
+            <div class="page-title-section">
+              <h1 class="page-title">
+                <span class="title-char" data-char="P">P</span>
+                <span class="title-char" data-char="R">R</span>
+                <span class="title-char" data-char="O">O</span>
+                <span class="title-char" data-char="J">J</span>
+                <span class="title-char" data-char="E">E</span>
+                <span class="title-char" data-char="C">C</span>
+                <span class="title-char" data-char="T">T</span>
+                <span class="title-char" data-char="S">S</span>
+              </h1>
+              <div class="page-subtitle">
+                <span class="code-bracket">&lt;</span>
+                <span class="code-tag">showcase</span>
+                <span class="code-attribute"> of</span>
+                <span class="code-value">="innovation"</span>
+                <span class="code-bracket">/&gt;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid de proyectos -->
+          <div class="projects-grid">
+            
+            <!-- Proyecto 1: ZenWord -->
+            <div class="project-card">
+              <div class="project-icon">
+                <svg viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="projectGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#667eea"/>
+                      <stop offset="100%" style="stop-color:#764ba2"/>
+                    </linearGradient>
+                  </defs>
+                  <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" 
+                           fill="none" 
+                           stroke="url(#projectGrad1)" 
+                           stroke-width="3"/>
+                  <rect x="35" y="35" width="30" height="20" fill="url(#projectGrad1)" opacity="0.6" rx="3"/>
+                  <text x="50" y="68" font-family="Orbitron" font-size="10" font-weight="900" text-anchor="middle" fill="#fff">ZEN</text>
+                </svg>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">ZenWord</h3>
+                <p class="project-description">
+                  ZenWord es un juego de palabras que nos ayuda a entrenar nuestro cerebro. 
+                  Un desafío mental interactivo desarrollado en Java con interfaz gráfica intuitiva.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">Swing</span>
+                  <span class="tech-tag">Games</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paubib10/ZenWord" target="_blank" class="project-btn primary">
+                    <span>Ver Código</span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="project-btn secondary">
+                    <span>Demo</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 2: FileManager -->
+            <div class="project-card">
+              <div class="project-icon">
+                <svg viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="projectGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#764ba2"/>
+                      <stop offset="100%" style="stop-color:#f093fb"/>
+                    </linearGradient>
+                  </defs>
+                  <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" 
+                           fill="none" 
+                           stroke="url(#projectGrad2)" 
+                           stroke-width="3"/>
+                  <rect x="30" y="30" width="40" height="25" fill="none" stroke="url(#projectGrad2)" stroke-width="2" rx="2"/>
+                  <rect x="35" y="35" width="8" height="6" fill="url(#projectGrad2)" opacity="0.8"/>
+                  <rect x="35" y="44" width="12" height="4" fill="url(#projectGrad2)" opacity="0.6"/>
+                  <text x="50" y="72" font-family="Orbitron" font-size="8" font-weight="900" text-anchor="middle" fill="#fff">FILE</text>
+                </svg>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">FileManager</h3>
+                <p class="project-description">
+                  Sistema de ficheros basado en Ext2 implementado en C. 
+                  Una implementación completa de operaciones de archivos y directorios con bajo nivel.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">C</span>
+                  <span class="tech-tag">Ext2</span>
+                  <span class="tech-tag">System Programming</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paubib10/FileManager" target="_blank" class="project-btn primary">
+                    <span>Ver Código</span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="project-btn secondary">
+                    <span>Documentación</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 3: Space Shooter -->
+            <div class="project-card">
+              <div class="project-icon">
+                <svg viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="projectGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#f093fb"/>
+                      <stop offset="100%" style="stop-color:#667eea"/>
+                    </linearGradient>
+                  </defs>
+                  <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" 
+                           fill="none" 
+                           stroke="url(#projectGrad3)" 
+                           stroke-width="3"/>
+                  <polygon points="50,25 45,40 55,40" fill="url(#projectGrad3)"/>
+                  <circle cx="40" cy="50" r="3" fill="url(#projectGrad3)" opacity="0.8"/>
+                  <circle cx="60" cy="50" r="3" fill="url(#projectGrad3)" opacity="0.8"/>
+                  <circle cx="35" cy="65" r="2" fill="url(#projectGrad3)" opacity="0.6"/>
+                  <circle cx="65" cy="65" r="2" fill="url(#projectGrad3)" opacity="0.6"/>
+                  <text x="50" y="78" font-family="Orbitron" font-size="8" font-weight="900" text-anchor="middle" fill="#fff">SPACE</text>
+                </svg>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Space Shooter</h3>
+                <p class="project-description">
+                  Adaptación en ensamblador Easy68K del famoso juego Space Shooter. 
+                  Programación de bajo nivel con gráficos y mecánicas de juego clásico.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Assembly</span>
+                  <span class="tech-tag">Easy68K</span>
+                  <span class="tech-tag">Retro Gaming</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paubib10/Space-Shooter" target="_blank" class="project-btn primary">
+                    <span>Ver Código</span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="project-btn secondary">
+                    <span>Gameplay</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 4: PuzzleJava -->
+            <div class="project-card">
+              <div class="project-icon">
+                <svg viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="projectGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#667eea"/>
+                      <stop offset="100%" style="stop-color:#f093fb"/>
+                    </linearGradient>
+                  </defs>
+                  <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" 
+                           fill="none" 
+                           stroke="url(#projectGrad4)" 
+                           stroke-width="3"/>
+                  <rect x="32" y="32" width="12" height="12" fill="url(#projectGrad4)" opacity="0.8"/>
+                  <rect x="56" y="32" width="12" height="12" fill="url(#projectGrad4)" opacity="0.6"/>
+                  <rect x="32" y="56" width="12" height="12" fill="url(#projectGrad4)" opacity="0.6"/>
+                  <rect x="56" y="56" width="12" height="12" fill="url(#projectGrad4)" opacity="0.4"/>
+                  <text x="50" y="78" font-family="Orbitron" font-size="8" font-weight="900" text-anchor="middle" fill="#fff">PUZZLE</text>
+                </svg>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">PuzzleJava</h3>
+                <p class="project-description">
+                  Un juego de rompecabezas en Java donde puedes personalizar con tus imágenes preferidas 
+                  y dividir el puzzle a tu gusto. ¡Desafía tu mente y disfruta!
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">Swing</span>
+                  <span class="tech-tag">Image Processing</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paubib10/PuzzleJava" target="_blank" class="project-btn primary">
+                    <span>Ver Código</span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="project-btn secondary">
+                    <span>Jugar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 5: PianoMelodiasJava -->
+            <div class="project-card">
+              <div class="project-icon">
+                <svg viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="projectGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#764ba2"/>
+                      <stop offset="100%" style="stop-color:#667eea"/>
+                    </linearGradient>
+                  </defs>
+                  <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" 
+                           fill="none" 
+                           stroke="url(#projectGrad5)" 
+                           stroke-width="3"/>
+                  <rect x="25" y="40" width="50" height="15" fill="none" stroke="url(#projectGrad5)" stroke-width="2" rx="2"/>
+                  <rect x="30" y="45" width="6" height="5" fill="url(#projectGrad5)" opacity="0.8"/>
+                  <rect x="40" y="45" width="6" height="5" fill="url(#projectGrad5)" opacity="0.8"/>
+                  <rect x="50" y="45" width="6" height="5" fill="url(#projectGrad5)" opacity="0.8"/>
+                  <rect x="60" y="45" width="6" height="5" fill="url(#projectGrad5)" opacity="0.8"/>
+                  <text x="50" y="75" font-family="Orbitron" font-size="8" font-weight="900" text-anchor="middle" fill="#fff">PIANO</text>
+                </svg>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">PianoMelodiasJava</h3>
+                <p class="project-description">
+                  Piano virtual interactivo desarrollado en Java. Con la capacidad de tocar notas, 
+                  crear melodías personalizadas, reproducirlas y desarrollar tu talento musical.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Java</span>
+                  <span class="tech-tag">Audio</span>
+                  <span class="tech-tag">Music</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paubib10/PianoMelodiasJava" target="_blank" class="project-btn primary">
+                    <span>Ver Código</span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="project-btn secondary">
+                    <span>Tocar Piano</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 6: MAZE-GAME -->
+            <div class="project-card">
+              <div class="project-icon">
+                <svg viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="projectGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#f093fb"/>
+                      <stop offset="100%" style="stop-color:#764ba2"/>
+                    </linearGradient>
+                  </defs>
+                  <polygon points="50,10 80,30 80,70 50,90 20,70 20,30" 
+                           fill="none" 
+                           stroke="url(#projectGrad6)" 
+                           stroke-width="3"/>
+                  <rect x="30" y="30" width="40" height="25" fill="none" stroke="url(#projectGrad6)" stroke-width="2"/>
+                  <path d="M35,35 L35,45 L45,45 L45,35 M50,40 L50,50 L60,50 M40,50 L40,40" 
+                        stroke="url(#projectGrad6)" stroke-width="1.5" fill="none"/>
+                  <circle cx="65" cy="50" r="2" fill="url(#projectGrad6)"/>
+                  <text x="50" y="72" font-family="Orbitron" font-size="8" font-weight="900" text-anchor="middle" fill="#fff">MAZE</text>
+                </svg>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">MAZE-GAME</h3>
+                <p class="project-description">
+                  Generar laberintos aleatoriamente que se han de explorar interactivamente. 
+                  Desarrollado en Common Lisp con algoritmos de generación procedural.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Common Lisp</span>
+                  <span class="tech-tag">Algorithms</span>
+                  <span class="tech-tag">Procedural Generation</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/paubib10/MAZE-GAME" target="_blank" class="project-btn primary">
+                    <span>Ver Código</span>
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </a>
+                  <a href="#" class="project-btn secondary">
+                    <span>Explorar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Botón de regreso -->
+          <div class="back-section">
+            <button class="modern-cta" onclick="window.location.href='../index.html'">
+              <div class="cta-inner">
+                <span class="cta-icon">←</span>
+                <span class="cta-label">VOLVER AL INICIO</span>
+              </div>
+              <div class="cta-glow"></div>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Efectos de fondo -->
+        <div class="background-effects">
+          <div class="gradient-orb orb-1"></div>
+          <div class="gradient-orb orb-2"></div>
+          <div class="gradient-orb orb-3"></div>
+          <div class="grid-pattern"></div>
+          <div class="floating-particles"></div>
+        </div>
+
+      </div>
+    </main>
+
+    <div class="footer">
+      &copy; 2025 Pau Bibiloni | Portfolio | Powered by Elegance
+    </div>
+
+    <script>
+      // Menú hamburguesa
+      const menuBtn = document.getElementById("menuBtn");
+      const menu = document.getElementById("menu");
+      if (menuBtn && menu) {
+        menuBtn.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+        menu.addEventListener("click", (e) => {
+          if (e.target === menu) menu.classList.remove("open");
+        });
+      }
+
+      // Modo claro/oscuro
+      const themeBtn = document.getElementById("themeBtn");
+      const themeText = document.getElementById("themeText");
+      if (themeBtn && themeText) {
+        themeBtn.addEventListener("click", () => {
+          document.body.classList.toggle("light");
+          themeText.textContent = document.body.classList.contains("light")
+            ? "Claro"
+            : "Oscuro";
+        });
+      }
+
+      // Idioma ESP/ENG
+      const langBtn = document.getElementById("langBtn");
+      const langText = document.getElementById("langText");
+      let lang = "ESP";
+      
+      if (langBtn && langText) {
+        langBtn.addEventListener("click", () => {
+          lang = lang === "ESP" ? "ENG" : "ESP";
+          langText.textContent = lang;
+        });
+      }
+
+      // Animación de entrada de las tarjetas de proyecto
+      const projectCards = document.querySelectorAll('.project-card');
+      projectCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+        card.classList.add('fade-in-up');
+      });
+    </script>
+</body>
+</html>

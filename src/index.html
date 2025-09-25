@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pau Bibi | Portfolio</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;700&family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="splashscreen" id="splash">
+        <!-- Logo unificado PB para carga -->
+        <div class="splash-logo">
+          <svg class="splash-logo-svg" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="splashGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00f5ff"/>
+                <stop offset="50%" style="stop-color:#0099ff"/>
+                <stop offset="100%" style="stop-color:#0066cc"/>
+              </linearGradient>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge> 
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <!-- Hexágono exterior -->
+            <polygon points="60,10 100,30 100,70 60,90 20,70 20,30" 
+                     fill="none" 
+                     stroke="url(#splashGradient)" 
+                     stroke-width="3"
+                     class="splash-hex"
+                     filter="url(#glow)"/>
+            <!-- Iniciales PB en el centro -->
+            <text x="60" y="75" 
+                  font-family="Orbitron, monospace" 
+                  font-size="32" 
+                  font-weight="900"
+                  text-anchor="middle" 
+                  fill="url(#splashGradient)"
+                  class="splash-text"
+                  filter="url(#glow)">PB</text>
+            <!-- Puntos de conexión animados -->
+            <circle cx="60" cy="10" r="4" fill="#00f5ff" class="splash-dot" filter="url(#glow)"/>
+            <circle cx="100" cy="30" r="4" fill="#0099ff" class="splash-dot" filter="url(#glow)"/>
+            <circle cx="100" cy="70" r="4" fill="#0066cc" class="splash-dot" filter="url(#glow)"/>
+            <circle cx="60" cy="90" r="4" fill="#00f5ff" class="splash-dot" filter="url(#glow)"/>
+            <circle cx="20" cy="70" r="4" fill="#0099ff" class="splash-dot" filter="url(#glow)"/>
+            <circle cx="20" cy="30" r="4" fill="#0066cc" class="splash-dot" filter="url(#glow)"/>
+          </svg>
+        </div>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+        <div class="loading-text">INITIALIZING SYSTEM...</div>
+        <div class="loading-percentage">0%</div>
+    </div>
+
+    <!-- Partículas de fondo tecnológicas -->
+    <div class="tech-particles"></div>
+    
+    <!-- Overlay de grid tecnológico -->
+    <div class="tech-grid"></div>
+    <div class="topbar">
+      <button class="option-btn" id="langBtn" title="Cambiar idioma">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-2-8h4m-2-6v12"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+          />
+        </svg>
+        <span id="langText">ESP</span>
+      </button>
+      <button class="option-btn" id="themeBtn" title="Modo claro/oscuro">
+        <svg id="themeIcon" viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 15a5 5 0 010-10"
+            fill="currentColor"
+          />
+        </svg>
+        <span id="themeText">Oscuro</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+        <svg viewBox="0 0 32 32">
+          <polygon
+            points="16,4 28,10 28,22 16,28 4,22 4,10"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="16"
+            y1="4"
+            x2="16"
+            y2="28"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="4"
+            y1="10"
+            x2="28"
+            y2="22"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="4"
+            y1="22"
+            x2="28"
+            y2="10"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+        </svg>
+        <span>Menú</span>
+      </button>
+    </div>
+    <div class="menu" id="menu">
+      <div class="menu-content">
+        <div class="menu-items">
+          <nav>
+            <ol>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="interfaces/projects.html">Proyectos</a></li>
+              <li><a href="interfaces/about.html">Sobre mí</a></li>
+              <li><a href="interfaces/contact.html">Contacto</a></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="menu-socials">
+          <a href="https://instagram.com/paubib_306" target="_blank"
+            >↗ Instagram </a
+          >
+          <a href="https://github.com/paubib10" target="_blank">↗ GitHub</a>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="welcome" id="inicio">
+        <!-- Contenedor principal perfectamente centrado -->
+        <div class="welcome-container">
+          
+          <!-- Logo personalizado con mejor simetría -->
+          <div class="logo-section">
+            <div class="logo-wrapper">
+              <svg class="logo-svg" viewBox="0 0 120 120">
+                <defs>
+                  <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#667eea"/>
+                    <stop offset="50%" style="stop-color:#764ba2"/>
+                    <stop offset="100%" style="stop-color:#f093fb"/>
+                  </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge> 
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <!-- Hexágono exterior perfecto -->
+                <polygon points="60,15 95,35 95,65 60,85 25,65 25,35" 
+                         fill="none" 
+                         stroke="url(#logoGradient)" 
+                         stroke-width="2"
+                         class="logo-hex"
+                         filter="url(#glow)"/>
+                <!-- Hexágono interior -->
+                <polygon points="60,25 85,40 85,60 60,75 35,60 35,40" 
+                         fill="rgba(102, 126, 234, 0.1)" 
+                         stroke="rgba(102, 126, 234, 0.3)" 
+                         stroke-width="1"
+                         class="logo-inner-hex"/>
+                <!-- Iniciales PB perfectamente centradas -->
+                <text x="60" y="72" 
+                      font-family="Orbitron, monospace" 
+                      font-size="24" 
+                      font-weight="900"
+                      text-anchor="middle" 
+                      fill="url(#logoGradient)"
+                      class="logo-text"
+                      filter="url(#glow)">PB</text>
+                <!-- Puntos de conexión simétricos -->
+                <circle cx="60" cy="15" r="2.5" fill="#667eea" class="logo-dot"/>
+                <circle cx="95" cy="35" r="2.5" fill="#764ba2" class="logo-dot"/>
+                <circle cx="95" cy="65" r="2.5" fill="#f093fb" class="logo-dot"/>
+                <circle cx="60" cy="85" r="2.5" fill="#667eea" class="logo-dot"/>
+                <circle cx="25" cy="65" r="2.5" fill="#764ba2" class="logo-dot"/>
+                <circle cx="25" cy="35" r="2.5" fill="#f093fb" class="logo-dot"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Título principal perfectamente centrado -->
+          <div class="title-section">
+            <div class="name-container">
+              <div class="name-line">
+                <span class="char" data-char="P">P</span>
+                <span class="char" data-char="A">A</span>
+                <span class="char" data-char="U">U</span>
+              </div>
+              <div class="name-line">
+                <span class="char" data-char="B">B</span>
+                <span class="char" data-char="I">I</span>
+                <span class="char" data-char="B">B</span>
+                <span class="char" data-char="I">I</span>
+              </div>
+            </div>
+            
+            <div class="profession-container">
+              <div class="profession-line">
+                <span class="profession-word">COMPUTER</span>
+                <span class="profession-separator">•</span>
+                <span class="profession-word">ENGINEER</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subtítulo de código centrado -->
+          <div class="code-section">
+            <div class="code-container">
+              <span class="code-bracket">&lt;</span>
+              <span class="code-tag">building</span>
+              <span class="code-attribute"> the</span>
+              <span class="code-value">="future"</span>
+              <span class="code-bracket">/&gt;</span>
+            </div>
+          </div>
+
+          <!-- Botón perfectamente centrado -->
+          <div class="cta-section">
+            <button class="modern-cta" onclick="window.location.href='interfaces/projects.html'">
+              <div class="cta-inner">
+                <span class="cta-icon">→</span>
+                <span class="cta-label">VIEW PROJECTS</span>
+              </div>
+              <div class="cta-glow"></div>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Efectos de fondo mejorados -->
+        <div class="background-effects">
+          <div class="gradient-orb orb-1"></div>
+          <div class="gradient-orb orb-2"></div>
+          <div class="gradient-orb orb-3"></div>
+          <div class="grid-pattern"></div>
+          <div class="floating-particles"></div>
+        </div>
+
+      </div>
+    </main>
+    <div class="footer">
+      &copy; 2025 Pau Bibiloni | Portfolio | Powered by Elegance
+    </div>
+
+    <script>
+      // Control del splashscreen - PRIMERO Y MÁS IMPORTANTE
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const splash = document.getElementById('splash');
+          if (splash) {
+            splash.style.opacity = '0';
+            splash.style.transition = 'opacity 1s ease-out';
+            setTimeout(() => {
+              splash.style.display = 'none';
+            }, 1000);
+          }
+        }, 1500); // 1.5 segundos de duración
+      });
+
+      // Generar partículas animadas en el fondo
+      function createParticles() {
+        const particlesBg = document.querySelector(".particles-bg");
+        if (particlesBg) {
+          particlesBg.innerHTML = "";
+          for (let i = 0; i < 20; i++) {
+            let p = document.createElement("div");
+            p.className = "particle";
+            p.style.width = p.style.height = 4 + Math.random() * 8 + "px";
+            p.style.top = Math.random() * 100 + "vh";
+            p.style.left = Math.random() * 100 + "vw";
+            p.style.opacity = 0.1 + Math.random() * 0.2;
+            p.style.animationDuration = 8 + Math.random() * 12 + "s";
+            particlesBg.appendChild(p);
+          }
+        }
+      }
+      createParticles();
+
+      // Menú hamburguesa
+      const menuBtn = document.getElementById("menuBtn");
+      const menu = document.getElementById("menu");
+      if (menuBtn && menu) {
+        menuBtn.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+        menu.addEventListener("click", (e) => {
+          if (e.target === menu) menu.classList.remove("open");
+        });
+      }
+
+      // Modo claro/oscuro
+      const themeBtn = document.getElementById("themeBtn");
+      const themeText = document.getElementById("themeText");
+      if (themeBtn && themeText) {
+        themeBtn.addEventListener("click", () => {
+          document.body.classList.toggle("light");
+          themeText.textContent = document.body.classList.contains("light")
+            ? "Claro"
+            : "Oscuro";
+        });
+      }
+
+      // Idioma ESP/ENG
+      const langBtn = document.getElementById("langBtn");
+      const langText = document.getElementById("langText");
+      let lang = "ESP";
+      
+      if (langBtn && langText) {
+        langBtn.addEventListener("click", () => {
+          lang = lang === "ESP" ? "ENG" : "ESP";
+          langText.textContent = lang;
+          
+          // Cambiar texto del botón CTA
+          const ctaLabel = document.querySelector(".cta-label");
+          if (ctaLabel) {
+            ctaLabel.textContent = lang === "ESP" ? "VER PROYECTOS" : "VIEW PROJECTS";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

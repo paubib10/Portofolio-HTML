@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre mí | Pau Bibi Portfolio</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;700&family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <!-- Partículas de fondo tecnológicas -->
+    <div class="tech-particles"></div>
+    
+    <!-- Overlay de grid tecnológico -->
+    <div class="tech-grid"></div>
+    
+    <div class="topbar">
+      <button class="option-btn" id="langBtn" title="Cambiar idioma">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-2-8h4m-2-6v12"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+          />
+        </svg>
+        <span id="langText">ESP</span>
+      </button>
+      <button class="option-btn" id="themeBtn" title="Modo claro/oscuro">
+        <svg id="themeIcon" viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 15a5 5 0 010-10"
+            fill="currentColor"
+          />
+        </svg>
+        <span id="themeText">Oscuro</span>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+        <svg viewBox="0 0 32 32">
+          <polygon
+            points="16,4 28,10 28,22 16,28 4,22 4,10"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="16"
+            y1="4"
+            x2="16"
+            y2="28"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="4"
+            y1="10"
+            x2="28"
+            y2="22"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="4"
+            y1="22"
+            x2="28"
+            y2="10"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+        </svg>
+        <span>Menú</span>
+      </button>
+    </div>
+    
+    <div class="menu" id="menu">
+      <div class="menu-content">
+        <div class="menu-items">
+          <nav>
+            <ol>
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="projects.html">Proyectos</a></li>
+              <li><a href="about.html">Sobre mí</a></li>
+              <li><a href="contact.html">Contacto</a></li>
+            </ol>
+          </nav>
+        </div>
+        <div class="menu-socials">
+          <a href="https://instagram.com/paubib_306" target="_blank"
+            >↗ Instagram </a
+          >
+          <a href="https://github.com/paubib10" target="_blank">↗ GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <div class="about-page">
+        <!-- Contenedor principal perfectamente centrado -->
+        <div class="page-container">
+          
+          <!-- Header de la página -->
+          <div class="page-header">
+            <div class="page-title-section">
+              <h1 class="page-title">
+                <span class="title-char" data-char="A">A</span>
+                <span class="title-char" data-char="B">B</span>
+                <span class="title-char" data-char="O">O</span>
+                <span class="title-char" data-char="U">U</span>
+                <span class="title-char" data-char="T">T</span>
+                <span class="title-space"> </span>
+                <span class="title-char" data-char="M">M</span>
+                <span class="title-char" data-char="E">E</span>
+              </h1>
+              <div class="page-subtitle">
+                <span class="code-bracket">&lt;</span>
+                <span class="code-tag">personal</span>
+                <span class="code-attribute"> journey</span>
+                <span class="code-value">="endless_learning"</span>
+                <span class="code-bracket">/&gt;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contenido principal -->
+          <div class="about-content">
+            
+            <!-- Sección de presentación -->
+            <div class="about-intro">
+              <div class="intro-avatar">
+                <div class="avatar-container">
+                  <svg class="avatar-svg" viewBox="0 0 120 120">
+                    <defs>
+                      <linearGradient id="avatarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea"/>
+                        <stop offset="50%" style="stop-color:#764ba2"/>
+                        <stop offset="100%" style="stop-color:#f093fb"/>
+                      </linearGradient>
+                      <filter id="avatarGlow">
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feMerge> 
+                          <feMergeNode in="coloredBlur"/>
+                          <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    <!-- Avatar frame -->
+                    <circle cx="60" cy="60" r="50" 
+                            fill="none" 
+                            stroke="url(#avatarGradient)" 
+                            stroke-width="3"
+                            filter="url(#avatarGlow)"/>
+                    <!-- Inner design -->
+                    <circle cx="60" cy="60" r="35" 
+                            fill="rgba(102, 126, 234, 0.1)" 
+                            stroke="rgba(102, 126, 234, 0.3)" 
+                            stroke-width="1"/>
+                    <!-- Center initials -->
+                    <text x="60" y="72" 
+                          font-family="Orbitron, monospace" 
+                          font-size="24" 
+                          font-weight="900"
+                          text-anchor="middle" 
+                          fill="url(#avatarGradient)"
+                          filter="url(#avatarGlow)">PB</text>
+                  </svg>
+                </div>
+              </div>
+              
+              <div class="intro-text">
+                <h2 class="intro-name">Pau Toni Bibiloni Martínez</h2>
+                <div class="intro-description">
+                  <p>Estudiante apasionado de <strong>Ingeniería Informática</strong> en la UIB, 
+                  con un enfoque especial en el desarrollo de software innovador y el diseño digital creativo.</p>
+                  
+                  <p>Me fascina el mundo de la tecnología y su potencial para transformar ideas en 
+                  soluciones reales. Además, soy un entusiasta del fitness y creo firmemente en el 
+                  equilibrio entre mente y cuerpo.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Grid de información -->
+            <div class="info-grid">
+              
+              <!-- Habilidades -->
+              <div class="info-card skills-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg viewBox="0 0 60 60">
+                      <defs>
+                        <linearGradient id="skillsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style="stop-color:#667eea"/>
+                          <stop offset="100%" style="stop-color:#764ba2"/>
+                        </linearGradient>
+                      </defs>
+                      <polygon points="30,5 50,15 50,35 30,45 10,35 10,15" 
+                               fill="none" 
+                               stroke="url(#skillsGrad)" 
+                               stroke-width="2"/>
+                      <circle cx="30" cy="25" r="8" fill="url(#skillsGrad)" opacity="0.6"/>
+                    </svg>
+                  </div>
+                  <h3 class="card-title">Habilidades Técnicas</h3>
+                </div>
+                <div class="card-content">
+                  <div class="skills-grid">
+                    <span class="skill-tag">Android Studio</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">Go</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Scrum</span>
+                    <span class="skill-tag">UI/UX</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Estudios -->
+              <div class="info-card education-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg viewBox="0 0 60 60">
+                      <defs>
+                        <linearGradient id="educationGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style="stop-color:#764ba2"/>
+                          <stop offset="100%" style="stop-color:#f093fb"/>
+                        </linearGradient>
+                      </defs>
+                      <polygon points="30,5 50,15 50,35 30,45 10,35 10,15" 
+                               fill="none" 
+                               stroke="url(#educationGrad)" 
+                               stroke-width="2"/>
+                      <rect x="20" y="20" width="20" height="10" fill="url(#educationGrad)" opacity="0.6" rx="2"/>
+                    </svg>
+                  </div>
+                  <h3 class="card-title">Formación Académica</h3>
+                </div>
+                <div class="card-content">
+                  <div class="timeline">
+                    <div class="timeline-item">
+                      <div class="timeline-marker"></div>
+                      <div class="timeline-content">
+                        <h4>Ingeniería Informática</h4>
+                        <p>Universidad de las Islas Baleares (UIB)</p>
+                        <span class="timeline-year">4º Curso - Actualidad</span>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-marker"></div>
+                      <div class="timeline-content">
+                        <h4>Bachillerato Tecnológico</h4>
+                        <p>Especialización en Ciencias y Tecnología</p>
+                        <span class="timeline-year">Completado</span>
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div class="timeline-marker"></div>
+                      <div class="timeline-content">
+                        <h4>Educación Secundaria</h4>
+                        <p>ESO con excelencia académica</p>
+                        <span class="timeline-year">Completado</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Intereses -->
+              <div class="info-card interests-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <svg viewBox="0 0 60 60">
+                      <defs>
+                        <linearGradient id="interestsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style="stop-color:#f093fb"/>
+                          <stop offset="100%" style="stop-color:#667eea"/>
+                        </linearGradient>
+                      </defs>
+                      <polygon points="30,5 50,15 50,35 30,45 10,35 10,15" 
+                               fill="none" 
+                               stroke="url(#interestsGrad)" 
+                               stroke-width="2"/>
+                      <circle cx="30" cy="20" r="4" fill="url(#interestsGrad)"/>
+                      <circle cx="20" cy="30" r="3" fill="url(#interestsGrad)" opacity="0.8"/>
+                      <circle cx="40" cy="30" r="3" fill="url(#interestsGrad)" opacity="0.8"/>
+                    </svg>
+                  </div>
+                  <h3 class="card-title">Pasiones & Intereses</h3>
+                </div>
+                <div class="card-content">
+                  <div class="interests-list">
+                    <div class="interest-item">
+                      <div class="interest-icon">💪</div>
+                      <div class="interest-text">
+                        <h4>Fitness & Gym</h4>
+                        <p>Entrenamiento regular y vida saludable</p>
+                      </div>
+                    </div>
+                    <div class="interest-item">
+                      <div class="interest-icon">💻</div>
+                      <div class="interest-text">
+                        <h4>Tecnología</h4>
+                        <p>Últimas tendencias en desarrollo software</p>
+                      </div>
+                    </div>
+                    <div class="interest-item">
+                      <div class="interest-icon">🎵</div>
+                      <div class="interest-text">
+                        <h4>Música</h4>
+                        <p>Exploración de géneros y nuevos artistas</p>
+                      </div>
+                    </div>
+                    <div class="interest-item">
+                      <div class="interest-icon">🎨</div>
+                      <div class="interest-text">
+                        <h4>Creatividad</h4>
+                        <p>Diseño digital y expresión artística</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Botón de regreso -->
+          <div class="back-section">
+            <button class="modern-cta" onclick="window.location.href='../index.html'">
+              <div class="cta-inner">
+                <span class="cta-icon">←</span>
+                <span class="cta-label">VOLVER AL INICIO</span>
+              </div>
+              <div class="cta-glow"></div>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Efectos de fondo -->
+        <div class="background-effects">
+          <div class="gradient-orb orb-1"></div>
+          <div class="gradient-orb orb-2"></div>
+          <div class="gradient-orb orb-3"></div>
+          <div class="grid-pattern"></div>
+          <div class="floating-particles"></div>
+        </div>
+
+      </div>
+    </main>
+
+    <div class="footer">
+      &copy; 2025 Pau Bibiloni | Portfolio | Powered by Elegance
+    </div>
+
+    <script>
+      // Menú hamburguesa
+      const menuBtn = document.getElementById("menuBtn");
+      const menu = document.getElementById("menu");
+      if (menuBtn && menu) {
+        menuBtn.addEventListener("click", () => {
+          menu.classList.toggle("open");
+        });
+        menu.addEventListener("click", (e) => {
+          if (e.target === menu) menu.classList.remove("open");
+        });
+      }
+
+      // Modo claro/oscuro
+      const themeBtn = document.getElementById("themeBtn");
+      const themeText = document.getElementById("themeText");
+      if (themeBtn && themeText) {
+        themeBtn.addEventListener("click", () => {
+          document.body.classList.toggle("light");
+          themeText.textContent = document.body.classList.contains("light")
+            ? "Claro"
+            : "Oscuro";
+        });
+      }
+
+      // Idioma ESP/ENG
+      const langBtn = document.getElementById("langBtn");
+      const langText = document.getElementById("langText");
+      let lang = "ESP";
+      
+      if (langBtn && langText) {
+        langBtn.addEventListener("click", () => {
+          lang = lang === "ESP" ? "ENG" : "ESP";
+          langText.textContent = lang;
+        });
+      }
+
+      // Animación de entrada de las tarjetas
+      const infoCards = document.querySelectorAll('.info-card');
+      infoCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+        card.classList.add('fade-in-up');
+      });
+    </script>
+</body>
+</html>
